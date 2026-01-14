@@ -1,6 +1,6 @@
 # RLHF_PPO_Tuned_GPT2
 **RLHF_PPO_Tuned_GPT2** fine-tunes GPT-2 using **Reinforcement Learning from Human Feedback (RLHF)** and **Proximal Policy Optimization (PPO)** to generate responses aligned with human preferences. This project enhances response helpfulness, truthfulness, and harmlessness through reward-based learning, significantly outperforming the vanilla GPT-2 model.
-
+The project focuses on alignment: teaching language models not just to sound good, but to behave responsibly when answering both normal and unsafe prompts.
 ## Fine-Tuning Process  
 #### Reward Model Training:  
 
@@ -50,55 +50,5 @@ The **RLHF PPO-tuned GPT-2** model offers significant improvements over the **va
 https://www.kaggle.com/code/karthiksundaram123/rlhf-ppo-tuned
 
 
-## Installation  
-**1. Clone the Repository**  
-  
-git clone https://github.com/yourusername/RLHF_PPO_Tuned_GPT2.git  
-cd RLHF_PPO_Tuned_GPT2  
-
-**2. Create a Virtual Environment (Optional)**  
-python -m venv venv  
-source venv/bin/activate  # On Windows: `venv\Scripts\activate`  
-
-**3. Install Dependencies**  
-pip install -r requirements.txt  
-
-**4. Ensure PyTorch with CUDA Support**  
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117  
-
-## Usage  
-
-**1. Preparing the Dataset**  
-python src/prepare_dataset.py    
-  
-**2. Training the Reward Model**    
-python src/train_reward_model.py    
-   
-**3. Training the PPO Model**
-python src/train_ppo_model.py  
-
-**4. Generating Responses**    
-python src/generate_responses.py  
-
-## Project Structure
-
-RLHF_PPO_Tuned_GPT2/  
-├── README.md  
-├── requirements.txt  
-├── .gitignore  
-├── src/  
-│   ├── prepare_dataset.py  
-│   ├── train_reward_model.py  
-│   ├── train_ppo_model.py  
-│   ├── generate_responses.py  
-│   └── utils.py  
-├── data/                         # Initially empty  
-│   ├── trained_reward_model/     # Created after reward model training  
-│   ├── ppo_gpt2_model/           # Created after PPO model training  
-│   └── ppo_gpt2_tokenizer/       # Tokenizer saved here  
-├── outputs/                      # Stores CSV outputs  
-│   └── query_response_pairs.csv  # Created after generating responses  
-├── logs/                         # Stores logs generated during training  
-└── LICENSE                       # Optional: Add a license file  
 
 
