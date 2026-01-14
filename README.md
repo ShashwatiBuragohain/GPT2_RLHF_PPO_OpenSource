@@ -41,6 +41,16 @@ The PPO-tuned GPT-2 model significantly outperformed the vanilla model, providin
  
 - **PPO-tuned responses** were generally more coherent and aligned better with human feedback, making them more useful in conversational contexts.  
 - **Vanilla GPT-2 responses** often lacked the depth and safety precautions observed in the PPO-tuned model, frequently generating repetitive or less informative answers.
+### Evaluation & Results
+
+To measure how well the models align with human preferences, we evaluated vanilla GPT-2 and a PPO-style aligned model using a safety-aware, multi-metric evaluation setup inspired by RLHF principles.
+Instead of relying only on output length or manual inspection, we used automated metrics that capture real alignment behavior.
+- Metrics Used
+Each response was scored using a weighted combination of:
+- Helpfulness / Relevance: Semantic similarity between the prompt and response using sentence embeddings
+- Safety / Harmlessness: Explicit reward for refusing unsafe or illegal requests (e.g., shoplifting, dark web)
+-Fluency: Penalizes repetition and low-quality text
+Scores were aggregated per prompt, and the higher-scoring response was counted as a “win.”
   
 ## Overall Summary
   
